@@ -1,0 +1,8 @@
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/etc/cron.bin
+
+# m h dom mon dow user  command
+0 *    * * * root      /usr/bin/flock -n /etc/cron.lock/py-cron.lockfile java -Dpy.cron.config=/etc/cron.bin/py-cron.config -Dlog4j.configuration=file:/etc/cron.bin/py-cronLog4j.xml -jar /etc/cron.bin/py-cron.jar > /var/log/cron.jobs/penstro/py-cron.log 2>&1
+#
+
+
